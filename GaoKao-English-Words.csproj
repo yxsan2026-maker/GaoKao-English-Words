@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.Maui.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
+        <TargetFrameworks Condition="$([msbuild]::GetTargetPlatformIdentifier('$(TargetFrameworks)')) == 'windows'">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+        <OutputType>Exe</OutputType>
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+
+        <!-- Display name -->
+        <ApplicationTitle>高考英语单词</ApplicationTitle>
+
+        <!-- App Identifier -->
+        <ApplicationId>com.yxsan2026.gaokao.english</ApplicationId>
+        <ApplicationVersion>1</ApplicationVersion>
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+
+        <!-- Versions -->
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFrameworks)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFrameworks)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <MauiIcon Include="Resources/AppIcon/appicon.svg" />
+        <MauiSplashScreen Include="Resources/Splash/splash.svg" Color="#512BD4" />
+        <MauiFont Include="Resources/Fonts/*.ttf" />
+        <MauiAsset Include="Resources/Raw/**" LogicalName="%(Filename)%(Extension)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+        <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.5" />
+    </ItemGroup>
+</Project>

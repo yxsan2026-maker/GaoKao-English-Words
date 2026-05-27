@@ -1,0 +1,27 @@
+# Build results
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+
+# Dependencies
+packages/
+.nuget/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+*.db
+*.db-shm
+*.db-wal
+
+# Runtime
+app.db

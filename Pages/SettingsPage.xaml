@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GaoKao_English_Words.Pages.SettingsPage"
+             Title="设置">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        
+        <!-- Sound Settings -->
+        <Frame BorderColor="#E0E0E0" CornerRadius="10" Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="声音效果" FontSize="18" FontAttributes="Bold" />
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label Text="启用声音" FontSize="16" />
+                    <Switch x:Name="SoundSwitch" Toggled="OnSoundToggled" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Notification Settings -->
+        <Frame BorderColor="#E0E0E0" CornerRadius="10" Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="通知提醒" FontSize="18" FontAttributes="Bold" />
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label Text="启用通知" FontSize="16" />
+                    <Switch x:Name="NotificationSwitch" Toggled="OnNotificationToggled" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Daily Goal -->
+        <Frame BorderColor="#E0E0E0" CornerRadius="10" Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="每日学习目标" FontSize="18" FontAttributes="Bold" />
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label Text="每天背单词数" FontSize="16" />
+                    <Entry x:Name="DailyGoalEntry" Placeholder="50" Keyboard="Numeric" HorizontalOptions="FillAndExpand" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Theme Settings -->
+        <Frame BorderColor="#E0E0E0" CornerRadius="10" Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="主题" FontSize="18" FontAttributes="Bold" />
+                <Picker x:Name="ThemePicker" Title="选择主题" SelectedIndexChanged="OnThemeChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="x:String">
+                            <x:String>Light</x:String>
+                            <x:String>Dark</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Save Button -->
+        <Button x:Name="SaveButton" Text="保存设置" BackgroundColor="#512BD4" TextColor="White" Clicked="OnSaveClicked" />
+
+        <!-- About -->
+        <Frame BorderColor="#E0E0E0" CornerRadius="10" Padding="15" VerticalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+            <VerticalStackLayout Spacing="5" VerticalOptions="End">
+                <Label Text="关于" FontSize="16" FontAttributes="Bold" />
+                <Label Text="高考英语单词 v1.0" FontSize="14" TextColor="#666666" />
+                <Label Text="人教版高考词汇背诵应用" FontSize="12" TextColor="#999999" />
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

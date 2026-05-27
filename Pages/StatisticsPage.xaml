@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GaoKao_English_Words.Pages.StatisticsPage"
+             Title="统计">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        
+        <!-- Refresh Button -->
+        <Button x:Name="RefreshButton" Text="刷新统计" Clicked="OnRefreshClicked" />
+
+        <!-- Stats Cards -->
+        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+            
+            <!-- Total Words -->
+            <Frame Grid.Row="0" Grid.Column="0" BorderColor="#512BD4" CornerRadius="10" Padding="15">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="总词汇数" FontSize="14" TextColor="#666666" HorizontalTextAlignment="Center" />
+                    <Label x:Name="TotalWordsLabel" Text="0" FontSize="24" FontAttributes="Bold" TextColor="#512BD4" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Mastered Words -->
+            <Frame Grid.Row="0" Grid.Column="1" BorderColor="#388E3C" CornerRadius="10" Padding="15">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="已掌握" FontSize="14" TextColor="#666666" HorizontalTextAlignment="Center" />
+                    <Label x:Name="MasteredLabel" Text="0" FontSize="24" FontAttributes="Bold" TextColor="#388E3C" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Studying Words -->
+            <Frame Grid.Row="1" Grid.Column="0" BorderColor="#FFA500" CornerRadius="10" Padding="15">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="学习中" FontSize="14" TextColor="#666666" HorizontalTextAlignment="Center" />
+                    <Label x:Name="StudyingLabel" Text="0" FontSize="24" FontAttributes="Bold" TextColor="#FFA500" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Mastery Rate -->
+            <Frame Grid.Row="1" Grid.Column="1" BorderColor="#D32F2F" CornerRadius="10" Padding="15">
+                <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                    <Label Text="掌握率" FontSize="14" TextColor="#666666" HorizontalTextAlignment="Center" />
+                    <Label x:Name="MasteryRateLabel" Text="0%" FontSize="24" FontAttributes="Bold" TextColor="#D32F2F" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+
+        <!-- Other Stats -->
+        <Frame BorderColor="#9C27B0" CornerRadius="10" Padding="15" HasShadow="True">
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="平均掌握度：" FontSize="16" />
+                    <Label x:Name="AverageProficiencyLabel" Text="0%" FontSize="16" FontAttributes="Bold" TextColor="#9C27B0" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="今日学习：" FontSize="16" />
+                    <Label x:Name="TodayCountLabel" Text="0 个" FontSize="16" FontAttributes="Bold" TextColor="#9C27B0" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="总学习次数：" FontSize="16" />
+                    <Label x:Name="TotalStudyLabel" Text="0 次" FontSize="16" FontAttributes="Bold" TextColor="#9C27B0" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

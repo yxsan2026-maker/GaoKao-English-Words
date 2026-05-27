@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GaoKao_English_Words.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <TabBar>
+        <ShellContent
+            Title="学习"
+            ContentTemplate="{DataTemplate local:StudyPage}"
+            Icon="book.png" />
+        <ShellContent
+            Title="统计"
+            ContentTemplate="{DataTemplate local:StatisticsPage}"
+            Icon="chart.png" />
+        <ShellContent
+            Title="设置"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Icon="settings.png" />
+    </TabBar>
+</Shell>
